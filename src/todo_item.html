@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="text_holder">
+        <p id="text"></p>
+    </div>
+    <div class="button_holder">
+        <button id="button">Delete</button>
+    </div>
+</div>
+<style>
+    .container {
+        display: grid;
+        grid-template-areas: 'text_holder text_holder button_holder';
+    }
+    .button_holder {
+        grid-area: button_holder;
+    }
+    .text_holder{
+        grid-area: text_holder;
+    }
+</style>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="input_holder">
+        <input placeholder="Type a todo!" id="input"/>
+    </div>
+    <div class="button_holder">
+        <button id="button">Add Todo</button>
+    </div>
+    <div id="todo_list_holder"></div>
+</div>
+<style>
+    .container{
+        display:grid;
+        grid-template-areas: 'input_holder input_holder button_holder' 'todo_list_holder todo_list_holder todo_list_holder';
+        width: 70%;
+        margin-left:15%;
+    }
+    .input_holder{
+        grid-area: input_holder;
+    }
+    .button_holder{ 
+        grid-area: button_holder;
+
+    }
+    #todo_list_holder{
+        grid-area: todo_list_holder;
+    }
+</style>

@@ -1,0 +1,23 @@
+{
+  "name": "node_mongo_wc_workshop",
+  "version": "1.0.0",
+  "description": "skeleton for the workshop",
+  "main": "main.js",
+  "scripts": {
+    "test": "concurrently --kill-others \"node main.js\" \"npm run webpack --watch\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-transform-custom-element-classes": "^0.1.0",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.0.1",
+    "raw-loader": "^0.5.1",
+    "uglifyjs-webpack-plugin": "^2.0.0",
+    "web-components-loader": "^0.1.2",
+    "webpack": "^4.19.1"
+  }
+}
