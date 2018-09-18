@@ -3,7 +3,7 @@ const path = require('path')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     entry: {
-      'build':'./src/todo_container.js',
+      'build':['./src/todo_container.js','./src/todo_item.js'],
     },
     output:{
         filename:'[name].js',

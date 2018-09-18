@@ -13,3 +13,5 @@ todoSchema.methods.updateSelf = function(data,callback){
         return callback(null)
     })
 }
+
+module.exports = mongoose.model('Todo',todoSchema)
