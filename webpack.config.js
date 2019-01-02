@@ -15,12 +15,12 @@ module.exports = {
             loader: 'babel-loader',
     
             options: {
-            plugins: ['syntax-dynamic-import',"transform-custom-element-classes",
-            "transform-es2015-classes"],
-    
-            presets: [['env', {
-                'modules': false
-            }]]
+                plugins: ['syntax-dynamic-import',"transform-custom-element-classes",
+                "transform-es2015-classes"],
+        
+                presets: [['env', {
+                    'modules': false
+                }]]
             },
     
             test: /\.js$/
