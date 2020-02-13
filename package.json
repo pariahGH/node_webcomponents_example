@@ -4,7 +4,7 @@
   "description": "skeleton for the workshop",
   "main": "main.js",
   "scripts": {
-    "run": "concurrently --kill-others \"node main.js\" \"npx webpack --watch\""
+    "dev": "concurrently --kill-others \"node main.js\" \"npx webpack --watch\""
   },
   "author": "",
   "license": "ISC",

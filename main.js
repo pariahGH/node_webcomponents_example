@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-//require('mongoose').connect('mongodb://127.0.0.1/demo');
+require('mongoose').connect('mongodb://127.0.0.1/demo');
 
 app.use(require('body-parser').json());
 

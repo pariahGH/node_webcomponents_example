@@ -12,12 +12,16 @@ import templateString from './todo_container.html'
             let todoInput = this.shadow.getElementById("input");
             
             addTodoButton.addEventListener("click",()=>{
-                let todoText = todoInput.value;
-                fetch("./todos/", {"method":"POST", body:{todoText}}).then((res)=>{
+                let text = todoInput.value;
+                fetch("/todos/", {
+                    method:"POST", 
+                    body:JSON.stringify({text}), 
+                    headers:{"Content-Type":"application/json"}
+                }).then((res)=>{
                     if(!res.ok) alert("Failed to reach server!\n" + res.status)
                     else res.json().then((resJson)=>{
                         resJson.success ? (
-                            this.todoContainer.appendChild(this.buildTodo(todoText, resJson.data)),
+                            this.todoContainer.appendChild(this.buildTodo(text, resJson.data)),
                             todoInput.value = ""
                         ) : alert("Failed to add todo!\n" + resJson.err.message);
                     });
@@ -25,7 +29,7 @@ import templateString from './todo_container.html'
             });
 
             clearTodosButton.addEventListener("click", ()=>{
-                fetch("./todos/", {"method":"DELETE"}).then((res)=>{
+                fetch("/todos/", {method:"DELETE"}).then((res)=>{
                     if(!res.ok) alert("Failed to reach server!" + "\n" + res.status)
                     else res.json().then((resJson)=>{
                         resJson.success ? this.clearTodoContainer() : alert("Failed to clear todo!\n" + resJson.err.message);
@@ -61,7 +65,7 @@ import templateString from './todo_container.html'
         }
 
         connectedCallback(){
-            fetch("./todos/", {"method":"GET"}).then((res)=>{
+            fetch("/todos/", {method:"GET"}).then((res)=>{
                 if(!res.ok) alert("Failed to reach server!" + "\n" + res.status)
                 else res.json().then((resJson)=>{
                     resJson.success ? this.loadTodos(resJson.data) : alert("Failed to get todos!\n" + resJson.err.message);
