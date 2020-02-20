@@ -27,7 +27,7 @@ import templateString from './todo_container.html'
                         alert("Failed to reach server!\n" + res.status)
                     }
                     else {
-                        resJson = await res.json();
+                        const resJson = await res.json();
                         // this here is a ternary - condition ? value if true : value if false;
                         // complicated dos can be wrapped in (), needed because this syntax expects values to return
                         resJson.success ? (
@@ -40,7 +40,7 @@ import templateString from './todo_container.html'
                     alert(e)
                 }
             });
-            // which one is more readable - this or the above? this uses promise syntax
+            // which one is more readable - this or the above? this uses promise syntax instead of async/await
             clearTodosButton.addEventListener("click", ()=>{
                 fetch("/todos/", {method:"DELETE"}).then((res)=>{
                     if(!res.ok) alert("Failed to reach server!" + "\n" + res.status)
